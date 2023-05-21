@@ -27,7 +27,8 @@ return require('packer').startup(function(use)
 		end
 	})
 
-	use({"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"})
+    use("christoomey/vim-tmux-navigator")
+	use("nvim-treesitter/nvim-treesitter", {run = ":TSUpdate"})
 	use("nvim-treesitter/playground")
 	use("theprimeagen/harpoon")
 	use("theprimeagen/refactoring.nvim")

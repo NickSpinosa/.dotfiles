@@ -100,3 +100,6 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 eval "$(direnv hook zsh)"
+
+alias zSource="source ~/.zshrc"
+alias tSource="tmux source ~/.config/tmux/.tmux.conf"
