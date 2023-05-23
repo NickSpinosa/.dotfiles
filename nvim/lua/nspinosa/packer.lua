@@ -8,6 +8,8 @@ return require('packer').startup(function(use)
 		requires = { {'nvim-lua/plenary.nvim'} }
 	}
 
+    use("nvim-telescope/telescope-fzy-native.nvim")
+
 	use({
 		'folke/tokyonight.nvim',
 		config = function()
