@@ -11,3 +11,6 @@ git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 brew install ripgrep
 #tmux plugin manager
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+brew tap homebrew/cask-fonts
+# fonts
+brew install font-iosevka-nerd-font

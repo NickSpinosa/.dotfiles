@@ -99,7 +99,14 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+# 
+# needed on macos to update bash
+path=("/usr/local/bin" $path)
+export PATH
+
 eval "$(direnv hook zsh)"
 
 alias zSource="source ~/.zshrc"
-alias tSource="tmux source ~/.config/tmux/.tmux.conf"
+alias tSource="tmux source ~/.config/tmux/tmux.conf"
+
+source ./work/env.sh
