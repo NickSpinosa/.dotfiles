@@ -108,5 +108,10 @@ eval "$(direnv hook zsh)"
 
 alias zSource="source ~/.zshrc"
 alias tSource="tmux source ~/.config/tmux/tmux.conf"
+alias vim="nvim"
+export EDITOR="nvim"
 
-source ./work/env.sh
+#load work environment if it exists
+if test -f ~/.config/zsh/work/env.sh; then
+    source ~/.config/zsh/work/env.sh
+fi
