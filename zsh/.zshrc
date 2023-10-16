@@ -101,7 +101,11 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # 
 # needed on macos to update bash
-path=("/usr/local/bin" $path)
+aptStr="$(which apt)"
+if [[ $aptStr = "apt not found" ]]; then
+    path=("/usr/local/bin" $path)
+fi
+path=($path "/home/nick/.local/share/bob/nvim-bin")
 export PATH
 
 eval "$(direnv hook zsh)"

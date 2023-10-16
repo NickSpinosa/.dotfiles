@@ -1,0 +1,40 @@
+    - name: Install Packages (zsh, tmux, ripgrep) 
+      apt:   
+        name: ["zsh", "tmux", "ripgrep"] 
+
+    - name: Change shell 
+      shell: chsh -s $(which zsh) 
+
+    - name: Install Oh My Zsh
+      shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+
+    - name: Install Packer 
+      ansible.builtin.git:
+        repo: 'https://github.com/wbthomason/packer.nvim'
+        dest: ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+        depth: 1
+
+    - name: Install Tmux Plugin Manager 
+      ansible.builtin.git:
+        repo: 'https://github.com/tmux-plugins/tpm'
+        dest: ~/.tmux/plugins/tpm
+
+    # - name: Sym Link 
+    #   shell: ./.dotfiles/link.sh
+    
+    - name: Install Rust via Rustup 
+      shell: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs > ./rustup.sh && chmod +x ./rustup.sh && ./rustup.sh -y && rm ./rustup.sh
+      args:
+        warn: false
+
+    - name: Source Rustup 
+      shell: PATH="$HOME/.cargo/bin:$PATH"
+    
+    # - name: Install bob via cargo 
+    #   shell: cargo install bob 
+    #
+    # - name: Install Neovim via bob
+    #   shell: bob install stable && bob use stable
+    #
+    # - name: Packer Sync 
+    #   shell: nvim --headless +PackerSync +q

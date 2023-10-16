@@ -1,0 +1,7 @@
+    - name: Download Fonts 
+      ansible.builtin.git:
+        repo: 'https://github.com/ryanoasis/nerd-fonts.git'
+        dest: ~/.nerd-fonts
+
+    - name: Install Fonts 
+      shell: ~/.nerd-fonts/install.sh

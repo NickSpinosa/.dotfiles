@@ -120,4 +120,3 @@ return require('packer').startup(function(use)
     use("eandrju/cellular-automaton.nvim")
     use("laytan/cloak.nvim")
 end)
--- theme
