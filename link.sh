@@ -6,7 +6,7 @@ fi
 
 #configuration folders that should be symlinked to .config
 if [[ -z $CONFIG_FOLDERS ]]; then
-	CONFIG_FOLDERS="nvim,tmux,zsh"
+	CONFIG_FOLDERS="nvim,tmux,zsh,kitty"
 fi
 
 #symlink zsh

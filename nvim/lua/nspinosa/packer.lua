@@ -52,6 +52,7 @@ return require('packer').startup(function(use)
             "thenbe/neotest-playwright",
             'vim-test/vim-test',
             'nvim-neotest/neotest-vim-test',
+            'haydenmeade/neotest-jest',
             "antoinemadec/FixCursorHold.nvim"
         }
     }
