@@ -119,3 +119,17 @@ export EDITOR="nvim"
 if test -f ~/.config/zsh/work/env.sh; then
     source ~/.config/zsh/work/env.sh
 fi
+
+function new_branch() {
+    local branch="master"
+
+    if [[ $(git ls-remote --heads origin main | wc) != 0 ]]; then
+        branch="main"
+    fi
+
+    git checkout -b $1 
+    git fetch origin $branch
+    git reset --hard origin/$branch
+}
+
+alias nb="new_branch"
