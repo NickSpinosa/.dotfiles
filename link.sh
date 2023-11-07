@@ -10,12 +10,13 @@ if [[ -z $CONFIG_FOLDERS ]]; then
 fi
 
 #symlink zsh
+rm ~/.zshrc
 ln $DOTFILES/zsh/.zshrc ~/.zshrc
 
 for folder in $(echo $CONFIG_FOLDERS | sed "s/,/ /g")
 do
-    printf "<========================================>"
-	echo " symlinking $DOTFILES/$folder to ~/.config/${$folder} "
-    printf "<========================================>\n"
+	echo " removing ~/.config/$folder "
+	rm -rf ~/.config/$folder
+	echo " symlinking $DOTFILES/$folder to ~/.config/$folder "
 	ln -s $DOTFILES/$folder ~/.config
 done
