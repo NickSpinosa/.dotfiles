@@ -1,5 +1,5 @@
 {
-  description = "Home Manager configuration of nick";
+  description = "Nick's Dotfiles via nix home-manager";
 
   inputs = {
     # Specify the source of Home Manager and Nixpkgs.
@@ -12,19 +12,35 @@
 
   outputs = { nixpkgs, home-manager, ... }:
     let
-      system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system};
+      linux = "x86_64-linux";
+      darwin = "aarch64-darwin";
+      pkgs = nixpkgs.legacyPackages.${linux};
+      dpkgs = nixpkgs.legacyPackages.${darwin};
     in
     {
       defaultPackage.x86_64-linux = home-manager.defaultPackage.x86_64-linux;
       defaultPackage.x86_64-darwin = home-manager.defaultPackage.x86_64-darwin;
+      defaultPackage.aarch64-darwin = home-manager.defaultPackage.aarch64-darwin;
 
+      #wsl
       homeConfigurations."nick" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
         # Specify your home configuration modules here, for example,
         # the path to your home.nix.
-        modules = [ ./home.nix ];
+        modules = [ ./wsl/home.nix ];
+
+        # Optionally use extraSpecialArgs
+        # to pass through arguments to home.nix
+      };
+
+      #mac
+      homeConfigurations."Nick Spinosa" = home-manager.lib.homeManagerConfiguration {
+        inherit dpkgs;
+
+        # Specify your home configuration modules here, for example,
+        # the path to your home.nix.
+        modules = [ ./darwin/home.nix ];
 
         # Optionally use extraSpecialArgs
         # to pass through arguments to home.nix

@@ -1,7 +1,6 @@
 { pkgs, ... }: {
   programs.zsh = {
     enable = true;
-    dotDir = ".config/zsh";
     oh-my-zsh = {
       theme = "nicoulaj";
       enable = true;
@@ -11,7 +10,7 @@
       ];
     };
     shellAliases = {
-        zSource = "source ~/.config/zsh/.zshrc";
+        zSource = "source ~/.zshrc";
         tSource = "source ~/.config/tmux/tmux.conf";
         vim = "nvim";
         vi = "nvim";

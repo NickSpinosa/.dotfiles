@@ -13,44 +13,9 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  # with pkgs;
-  home.packages = with pkgs; [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    hello
-
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # # '')
-    # tmux
-    neovim
-    ripgrep
-    git
-    gh
-    oh-my-zsh
-    rustup
-    nodejs_20
-    cargo-watch
-    nodePackages.ts-node
-    nodePackages.typescript
-    gcc
-    zig
-    bat
-    htop
-    (pkgs.nerdfonts.override { fonts = [ "Iosevka" ]; })
-    kitty
-    direnv
-  ];
-
+  home.packages = with pkgs; callPackage ../shared/packages.nix {} ++ [
+     ghc 
+  ]; 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
@@ -87,7 +52,7 @@
   home.homeDirectory = "/home/nick";
 
   imports = [
-    ./tmux.nix
-    ./zsh.nix
+    ../shared/tmux.nix
+    ../shared/zsh.nix
   ];
 }
