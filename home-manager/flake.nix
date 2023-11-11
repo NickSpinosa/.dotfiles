@@ -14,7 +14,11 @@
     let
       system = "x86_64-linux";
       pkgs = nixpkgs.legacyPackages.${system};
-    in {
+    in
+    {
+      defaultPackage.x86_64-linux = home-manager.defaultPackage.x86_64-linux;
+      defaultPackage.x86_64-darwin = home-manager.defaultPackage.x86_64-darwin;
+
       homeConfigurations."nick" = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
 
