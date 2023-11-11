@@ -18,3 +18,9 @@ or simply
 hs
 ```
 
+for wsl you need to enable systemd by adding the below to your `/etc/wsl.conf` file
+```
+[boot]
+systemd=true
+```
+more info (here)[https://learn.microsoft.com/en-us/windows/wsl/systemd]
