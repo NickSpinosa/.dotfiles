@@ -4,7 +4,6 @@ with pkgs; [
   hello
 
   #dev env
-  neovim
   git
   gh
   oh-my-zsh
@@ -14,6 +13,7 @@ with pkgs; [
   ripgrep
   bat
   btop
+  xclip
 
   #rust env
   rustup

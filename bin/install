@@ -10,13 +10,9 @@ echo "$GREEN} Cloning Dotfiles... ${CLEAR}"
 git clone https://github.com/NickSpinosa/.dotfiles.git ~/.dotfiles && cd ~/.dotfiles/
 git checkout nix
 
-echo "$GREEN} Linking Dotfiles... ${CLEAR}"
-chmod +x ~/.dotfiles/bin/*
-~/.dotfiles/bin/link.sh
-
 echo "$GREEN} Running nix flake... ${CLEAR}"
 cd ~/.dotfiles/home-manager
-nix run . switch
+nix run . switch --extra-experimental-features nix-command --extra-experimental-features flakes
 
 echo "$GREEN} Installing Packer... ${CLEAR}"
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\

@@ -1,7 +1,4 @@
-{ pkgs, ... }:
-let
-in
-{
+{ pkgs, ... }: {
   programs.tmux = {
     enable = true;
     shell = "${pkgs.zsh}/bin/zsh";
@@ -17,6 +14,7 @@ in
         {
           plugin = tmuxPlugins.catppuccin;
           extraConfig = ''
+            # new shit test
             set -g @catppuccin_window_left_separator "█"
             set -g @catppuccin_window_right_separator "█ "
             set -g @catppuccin_window_number_position "right"
@@ -62,7 +60,7 @@ in
       set -g status-style 'bg=#333333 fg=#5eacd3'
       set-option -g status-position top
 
-      bind r source-file ~/.config/tmux/tmux.conf
+      # bind r source-file ~/.config/tmux/tmux.conf
       set -g base-index 1
 
       # window name formatting

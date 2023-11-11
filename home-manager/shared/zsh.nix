@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   programs.zsh = {
+    prezto.tmux.autoStartLocal = true;
     enable = true;
     oh-my-zsh = {
       theme = "nicoulaj";
@@ -11,15 +12,17 @@
     };
     shellAliases = {
         zSource = "source ~/.zshrc";
-        tSource = "source ~/.config/tmux/tmux.conf";
+        tSource = "tmux source ~/.config/tmux/tmux.conf";
         vim = "nvim";
         vi = "nvim";
-        hs = "home-manager switch && zSource";
+        hs = "home-manager switch --flake ~/.dotfiles/home-manager && zSource && tSource";
         cat = "bat";
-        top = "htop";
+        top = "btop";
     };
     initExtra= ''
-    . ~/.config/env/env.sh
+    . ~/.config/scripts/env.sh
     '';
   };
+
+  home.file.".config/scripts".source = ../../config/scripts;
 }
