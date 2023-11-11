@@ -2,7 +2,7 @@ To install first install nix then run the install script
 
 install nix 
 ```sh 
-curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh -s -- install
+sh <(curl -L https://nixos.org/nix/install)
 ```
 run the install script
 ```sh 

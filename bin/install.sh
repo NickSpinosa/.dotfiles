@@ -6,8 +6,8 @@ GREEN='\033[1;32m'
 RED='\033[1;31m'
 CLEAR='\033[0m'
 
-is_linux=$(uname) = "Linux";
-is_darwin=$(uname) = "Darwin";
+# is_linux=$(uname) = "Linux";
+# is_darwin=$(uname) = "Darwin";
 
 echo "$GREEN} Cloning Dotfiles... ${CLEAR}"
 git clone https://github.com/NickSpinosa/.dotfiles.git ~/.dotfiles
