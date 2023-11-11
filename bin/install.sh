@@ -10,8 +10,7 @@ CLEAR='\033[0m'
 # is_darwin=$(uname) = "Darwin";
 
 echo "$GREEN} Cloning Dotfiles... ${CLEAR}"
-git clone https://github.com/NickSpinosa/.dotfiles.git ~/.dotfiles
-cd ~/.dotfiles/
+git clone https://github.com/NickSpinosa/.dotfiles.git ~/.dotfiles && cd ~/.dotfiles/
 git checkout nix
 
 echo "$GREEN} Linking Dotfiles... ${CLEAR}"
