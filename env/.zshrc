@@ -133,3 +133,4 @@ function new_branch() {
 }
 
 alias nb="new_branch"
+alias hs="home-manager switch"

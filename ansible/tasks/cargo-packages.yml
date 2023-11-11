@@ -1,2 +1,0 @@
-    - name: Install Cargo Watch via cargoh
-      shell: cargo installcargo-watch
