@@ -11,6 +11,7 @@ CLEAR='\033[0m'
 
 echo "$GREEN} Cloning Dotfiles... ${CLEAR}"
 git clone https://github.com/NickSpinosa/.dotfiles.git ~/.dotfiles
+git checkout nix
 
 echo "$GREEN} Linking Dotfiles... ${CLEAR}"
 chmod +x ~/.dotfiles/bin/*
