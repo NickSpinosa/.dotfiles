@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 GREEN='\033[1;32m'
 RED='\033[1;31m'
 CLEAR='\033[0m'

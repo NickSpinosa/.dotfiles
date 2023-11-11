@@ -1,4 +1,5 @@
 #!/usr/bin/env zsh
+set -e
 
 if [[ -z $DOTFILES ]]; then
 	DOTFILES=$HOME/.dotfiles
