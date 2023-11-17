@@ -1,4 +1,4 @@
-{ pkgs }:
+{ pkgs, fenixPkgs }:
 with pkgs; [
   #test
   hello
@@ -16,7 +16,7 @@ with pkgs; [
   xclip
 
   #rust env
-  rustup
+  fenixPkgs.stable.toolchain
   cargo-watch
   gcc
   zig
