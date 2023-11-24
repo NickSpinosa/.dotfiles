@@ -20,6 +20,8 @@ with pkgs; [
   cargo-watch
   gcc
   zig
+  gdb
+  lldb
 
   #ts env
   nodejs_20

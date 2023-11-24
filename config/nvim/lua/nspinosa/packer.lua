@@ -33,6 +33,7 @@ return require('packer').startup(function(use)
     end }
 
     -- debugging
+    use 'simrat39/rust-tools.nvim'
     use 'mfussenegger/nvim-dap'
     use { "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } }
     use { "mxsdev/nvim-dap-vscode-js", requires = { "mfussenegger/nvim-dap" } }

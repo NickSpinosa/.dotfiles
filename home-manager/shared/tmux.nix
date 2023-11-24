@@ -14,7 +14,6 @@
         {
           plugin = tmuxPlugins.catppuccin;
           extraConfig = ''
-            # new shit test
             set -g @catppuccin_window_left_separator "█"
             set -g @catppuccin_window_right_separator "█ "
             set -g @catppuccin_window_number_position "right"

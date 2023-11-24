@@ -18,8 +18,6 @@ function ColorMyPencils(color)
 
 end
 
-ColorMyPencils()
-
 -- setup must be called before loading
 ctp_feline.setup({
     assets = {
