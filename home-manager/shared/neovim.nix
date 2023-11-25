@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ config, pkgs, ... }: {
   programs.neovim = {
     enable = true;
     viAlias = true;
@@ -8,8 +8,7 @@
   };
 
   home.file = {
-    ".config/nvim".source = ../../config/nvim;
-    # ".config/nvim".recursive = true;
+    ".config/nvim".source = config.lib.file.mkOutOfStoreSymlink ../../config/nvim;
   };
 }
 

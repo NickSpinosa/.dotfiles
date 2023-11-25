@@ -29,7 +29,6 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 -- vim.opt.colorcolumn = "80"
-vim.cmd.colorscheme "catppuccin"
 
 -- project level config
 vim.opt.exrc = true
