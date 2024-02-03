@@ -18,6 +18,7 @@ with pkgs; [
   #rust env
   fenixPkgs.stable.toolchain
   cargo-watch
+  cargo-nextest
   gcc
   zig
   gdb

@@ -7,13 +7,17 @@ return {
         'vim-test/vim-test',
         'nvim-neotest/neotest-vim-test',
         'haydenmeade/neotest-jest',
-        "antoinemadec/FixCursorHold.nvim"
+        "antoinemadec/FixCursorHold.nvim",
+        "rouge8/neotest-rust",
     },
     config = function()
         local ntest = require("neotest")
 
         ntest.setup({
             adapters = {
+                require("neotest-rust") {
+                    args = { "--no-capture" }
+                },
 
                 require("neotest-vim-test")({
                     ignore_file_types = { "python", "vim", "lua" },

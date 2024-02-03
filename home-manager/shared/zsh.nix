@@ -18,6 +18,7 @@
         hs = "home-manager switch --flake ~/.dotfiles/home-manager && zSource && tSource";
         cat = "bat";
         top = "btop";
+        win = "cd /mnt/c/Users/nicks";
     };
     initExtra= ''
     . ~/.config/scripts/env.sh
