@@ -5,6 +5,7 @@
     vimAlias = true;
     defaultEditor = true;
     vimdiffAlias = true;
+    # package = pkgs.neovim-nightly;
   };
 
   home.file = {
